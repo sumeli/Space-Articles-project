@@ -42,7 +42,7 @@
   background-color: #9ab0ec;
 }
 
-.dropdown-text{
+.dropdown-text {
   font-family: 'Lobster', cursive;
   font-weight: 700;
   font-size: 15px;
@@ -121,4 +121,17 @@
 .pagination ul li.page-item {
   height: 45px;
   width: 45px;
+}
+
+.about_page {
+  background-color: rgb(234, 242, 245);
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  margin-top: 70px;
+}
+
+.about_page button {
+  background-color: #9ab0ec;
 }

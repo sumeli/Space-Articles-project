@@ -18,9 +18,9 @@ function Article({ articles, loading, pagin }) {
                             <div className="article_image">
                                 <img src={article.imageUrl} alt="article_img" />
                                 <div className="articles_overview">
-                                    <h3>Overview: </h3>
-                                    <p>{article.summary}</p>
-                                    <Link to={`/about/${article.id}`}>
+                                    <h3>Sources from: </h3>
+                                    <p>{article.newsSite}</p>
+                                    <Link to={`/article/${article.id}`}>
                                     <p>Know more...</p>
                                     </Link>
                                 </div>

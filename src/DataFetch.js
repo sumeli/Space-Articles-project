@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import Article from './Article';
 import _ from 'lodash'
 
-const pageSize = 10;
+const pageSize = 15;
 
 function DataFetch() {
     const [articles, setArticles] = useState([]);
@@ -15,17 +15,6 @@ function DataFetch() {
 
     useEffect(() => {
         setLoading(true)
-        // fetch(`https://api.spaceflightnewsapi.net/v3/articles?_limit=50`)
-        //     .then(data =>
-        //         data.json()
-        //     )
-        //     .then(res => {
-        //         console.log(res)
-        //         setAllarticles(res)
-        //     })
-        //     .catch(error => {
-        //         console.log(error)
-        //     })
         fetch(`https://api.spaceflightnewsapi.net/v3/articles?_limit=${postPerPage}`)
             .then(data =>
                 data.json()
@@ -51,12 +40,6 @@ function DataFetch() {
     const page_count = articles ? Math.ceil(articles.length / pageSize) : 0
     const pages = _.range(1, page_count + 1)
 
-    // const pages = [];
-    // for(let i=1; i<=Math.ceil(articles.length/postPerPage); i++){
-    //     pages.push(i);
-    // }
-
-
     //Get the current posts
     const indexOfLastPost = currentPage * postPerPage;
     const indexOfFirstPost = indexOfLastPost - postPerPage;
@@ -71,7 +54,7 @@ function DataFetch() {
                     value={postPerPage} onChange={(e) => { setPostPerPage(e.target.value); }}>
                     <option value="5">News records: 5</option>
                     <option value="10">News records: 10</option>
-                    <option value="15">News records: 15</option>
+                    <option value="15">News records: 15(max)</option>
                     <option value="20">News records: 20</option>
                     <option value="25">News records: 25</option>
                     <option value="30">News records: 30</option>
