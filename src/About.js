@@ -8,7 +8,7 @@ function About() {
 
   const [items, setItem] = useState([]);
   useEffect(() => {
-    fetch("https://api.spaceflightnewsapi.net/v3/articles")
+    fetch("https://api.spaceflightnewsapi.net/v3/articles?_limit=40")
       .then(data =>
         data.json()
       )
